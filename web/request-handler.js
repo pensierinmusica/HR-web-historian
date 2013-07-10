@@ -5,6 +5,7 @@ module.exports.datadir = path.join(__dirname, "../data/sites.txt"); // tests wil
 
 // Old version (check if it needs to be removed)
 var url = require('url');
+var fs = require('fs');
 exports.datadir = __dirname + "data/sites.txt"; // tests will need to override this.
 
 
@@ -21,12 +22,13 @@ module.exports.handleRequest = function (req, res) {
         console.log(data);
       });
     }
-    require('fs').readFile('./public/index.html', function(err, data) {
+    fs.readFile('/Users/hackreactor/code/maxmalin/2013-06-web-historian/web/public/index.html', 'utf8', function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/html'});
+      console.log(data);
       res.end(data);
     });
   } else if (path.match(/\.css$/)) {
-      require('fs').readFile('./public' + path, function(err, data) {
+      fs.readFile('./public' + path, function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/css'});
       res.end(data);
     });
