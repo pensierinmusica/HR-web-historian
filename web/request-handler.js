@@ -11,10 +11,7 @@ exports.datadir = __dirname + "data/sites.txt"; // tests will need to override t
 
 
 module.exports.handleRequest = function (req, res) {
-  console.log(exports.datadir);
-
   var path = url.parse(req.url).path;
-  console.log(path);
   if (path === '/') {
     if (req.method === 'POST') {
       req.setEncoding('utf8');
