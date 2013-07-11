@@ -31,3 +31,6 @@ exports.downloadUrls = function(urls){
     }
   }
 };
+
+// Set up a cron job
+// * * * * * /opt/boxen/nodenv/shims/node /Users/hackreactor/code/maxmalin/2013-06-web-historian/workers/htmlfetcher.js
