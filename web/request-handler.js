@@ -1,9 +1,9 @@
-// New version
-var path = require('path');
-module.exports.datadir = path.join(__dirname, "../data/sites.txt"); // tests will need to override this.
+// New version (to be implemented)
+// var path = require('path');
+// module.exports.datadir = path.join(__dirname, "../data/sites.txt"); // tests will need to override this.
 
 
-// Old version (check if it needs to be removed)
+// Old version (needs to be substituted with new version)
 var url = require('url');
 var fs = require('fs');
 var absPath = '/Users/hackreactor/code/maxmalin/2013-06-web-historian/';
