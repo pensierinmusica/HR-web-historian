@@ -27,11 +27,7 @@ describe("html fetcher helpers", function(){
     });
   });
 
-<<<<<<< HEAD
-  xit("should have a 'downloadUrls' function", function(){
-=======
   it("should have a 'downloadUrls' function", function(){
->>>>>>> Implements worker that fetches html
     var result = htmlFetcherHelpers.downloadUrls();
     expect(result).toBeTruthy();
   });

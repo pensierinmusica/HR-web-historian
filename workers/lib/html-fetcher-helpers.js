@@ -8,7 +8,7 @@ exports.readUrls = function(filePath, cb){
     for (var i = 0; i < urls.length; i++) {
       fs.existsSync(absPath + 'data/sites/' + urls[i] + '.html') && (urls[i] = 0);
     }
-    urls.pop();
+    urls[urls.length - 1] || urls.pop();
     cb(urls);
   });
 };
@@ -16,8 +16,7 @@ exports.readUrls = function(filePath, cb){
 exports.downloadUrls = function(urls){
   for (var i = 0; i < urls.length; i++) {
     if (urls[i]) {
-      var options = {url: urls[i]};
-      http.get(options, absPath + 'data/sites/' + urls[i] + '.html', function (error) {
+      http.get({url: urls[i]}, absPath + 'data/sites/' + urls[i] + '.html', function (error) {
         if (error) {
           console.log(error);
         }
